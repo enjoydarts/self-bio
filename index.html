@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Minoru | Bio</title>
-    <meta name="description" content="Minoru Kitayama - Freelance Web Engineer. Links & contact." />
+    <title>Minoru Kitayama - Freelance Web Engineer</title>
+    <meta name="description" content="Freelance web engineer roaming Japan. Ruby, PHP, TypeScript—plus whatever works." />
 
     <!-- OGP -->
-    <meta property="og:title" content="Minoru | Bio" />
-    <meta property="og:description" content="Links & contact." />
+    <meta property="og:title" content="Minoru Kitayama - Freelance Web Engineer" />
+    <meta property="og:description" content="Freelance web engineer roaming Japan." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://minoru.bio/og.png" />
 
@@ -22,79 +22,95 @@
 </head>
 
 <body>
-    <main class="wrap">
-        <header class="card">
-            <div class="top">
-                <img src="./avatar.png" alt="Minoru Kitayama" class="avatar" />
-                <div class="info">
-                    <h1>Minoru Kitayama</h1>
-                    <p class="sub">Freelance Web Engineer · Japan</p>
-                </div>
+    <div class="container">
+        <div class="avatar-section">
+            <img src="./avatar.png" alt="Minoru Kitayama" class="avatar" />
+            <h1>Minoru Kitayama</h1>
+            <p class="subtitle">Freelance Web Engineer</p>
+            <p class="location">Japan</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="bio">
+            日本を旅するフリーランスエンジニア。<br />
+            Ruby・PHP・TypeScript — 必要なら何でも。<br />
+            香水、音楽、美しいコード。
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Links</h2>
+            <div class="verified-accounts">
+                <a href="https://enjoydarts.blog" class="account-link" target="_blank" rel="me noopener">
+                    <svg class="account-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                    </svg>
+                    <div class="account-info">
+                        <span class="account-name">Blog</span>
+                        <span class="account-url">enjoydarts.blog</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/enjoydarts" class="account-link" target="_blank" rel="me noopener">
+                    <svg class="account-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                    </svg>
+                    <div class="account-info">
+                        <span class="account-name">GitHub</span>
+                        <span class="account-url">github.com/enjoydarts</span>
+                    </div>
+                </a>
+
+                <a href="https://x.com/enjoydarts" class="account-link" target="_blank" rel="me noopener">
+                    <svg class="account-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    <div class="account-info">
+                        <span class="account-name">X</span>
+                        <span class="account-url">x.com/enjoydarts</span>
+                    </div>
+                </a>
+
+                <a href="https://threads.net/darts" class="account-link" target="_blank" rel="me noopener">
+                    <svg class="account-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.186 3.076c-1.924 0-3.597.606-4.878 1.754C5.93 6.025 5.096 7.677 5.096 9.762c0 1.014.187 1.94.552 2.735.364.794.895 1.464 1.572 1.981a6.86 6.86 0 002.385 1.139c.883.23 1.849.345 2.851.345 1.924 0 3.597-.606 4.878-1.754 1.378-1.247 2.212-2.899 2.212-4.984 0-1.014-.187-1.94-.552-2.735a5.896 5.896 0 00-1.572-1.981 6.86 6.86 0 00-2.385-1.139c-.883-.23-1.849-.345-2.851-.345zm0 13.848c-2.329 0-4.357-.736-5.911-2.127C4.72 13.406 3.768 11.325 3.768 8.838c0-2.487.952-4.568 2.507-5.959C7.829 1.488 9.857.752 12.186.752c2.329 0 4.357.736 5.911 2.127 1.555 1.391 2.507 3.472 2.507 5.959 0 2.487-.952 4.568-2.507 5.959-1.554 1.391-3.582 2.127-5.911 2.127z"/>
+                        <path d="M12 8.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/>
+                    </svg>
+                    <div class="account-info">
+                        <span class="account-name">Threads</span>
+                        <span class="account-url">threads.net/darts</span>
+                    </div>
+                </a>
+
+                <a href="mailto:me@minoru.email" class="account-link">
+                    <svg class="account-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <path d="m22 6-10 7L2 6"/>
+                    </svg>
+                    <div class="account-info">
+                        <span class="account-name">Email</span>
+                        <span class="account-url">me@minoru.email</span>
+                    </div>
+                </a>
             </div>
+        </section>
 
-            <p class="bio">
-                日本を旅するフリーランスエンジニア。<br />
-                Ruby・PHP・TypeScript — 必要なら何でも。<br />
-                香水、音楽、美しいコード。
-            </p>
-
-            <div class="links">
-                <a class="btn" href="https://enjoydarts.blog" rel="me noopener" target="_blank">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>Blog</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a class="btn" href="https://github.com/enjoydarts" rel="me noopener" target="_blank">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>GitHub</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a class="btn" href="https://x.com/enjoydarts" rel="me noopener" target="_blank">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 4l11.733 16h4.267l-11.733-16zm0 16l5-6.857m11.5-9.143l-5 6.857" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>X</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a class="btn" href="https://threads.net/darts" rel="me noopener" target="_blank">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 0a9 9 0 0 1 9 9m-9-9v18m9-9H3m9-9a9 9 0 0 0-9 9m9-9c2 0 3.5 4 3.5 9s-1.5 9-3.5 9m0-18c-2 0-3.5 4-3.5 9s1.5 9 3.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>Threads</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a class="btn" href="mailto:me@minoru.email">
-                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span>Email</span>
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+        <section class="section">
+            <h2 class="section-title">About</h2>
+            <div class="about-text">
+                <p>Freelance web engineer roaming Japan.</p>
+                <p>Ruby, PHP, TypeScript—plus whatever works.</p>
+                <p>Inspired by fine scents, immersive sound, and clean code.</p>
             </div>
-        </header>
+        </section>
 
-        <footer class="foot">
-            <small>© <span id="y"></span> Minoru</small>
+        <footer class="footer">
+            <p>© <span id="year"></span> Minoru Kitayama</p>
         </footer>
-    </main>
+    </div>
 
     <script>
-        document.getElementById("y").textContent = new Date().getFullYear();
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 
