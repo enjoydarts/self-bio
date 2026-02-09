@@ -159,6 +159,51 @@ h1 {
   margin-bottom: 20px;
 }
 
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.service-category-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.service-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-items li {
+  font-size: 14px;
+  color: var(--gray-700);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.service-items li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: bold;
+}
+
+.service-ja {
+  font-size: 13px;
+  color: var(--gray-600);
+  display: inline-block;
+  margin-top: 2px;
+}
+
 .verified-accounts {
   display: flex;
   flex-direction: column;
