@@ -48,36 +48,34 @@ body {
   flex: 1;
 }
 
-.header-links {
+.status-badge {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 20px;
+  cursor: default;
 }
 
-.header-link {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gray-600);
-  transition: all 0.2s ease;
-  border-radius: 8px;
-  background: var(--gray-200);
-  border: 1px solid var(--gray-300);
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.header-link:hover {
-  color: var(--cyan);
-  background: var(--gray-300);
-  border-color: var(--cyan);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
-.header-link svg {
-  width: 20px;
-  height: 20px;
+.status-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #22c55e;
 }
 
 .main-layout {
@@ -541,9 +539,8 @@ h1 {
     padding-bottom: 30px;
   }
 
-  .header-links {
+  .status-badge {
     margin-top: 16px;
-    justify-content: center;
   }
 
   h1 {
