@@ -22,7 +22,7 @@ const { title = siteConfig.title, description = siteConfig.description } = Astro
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={siteConfig.ogImage} />
+    <meta property="og:image" content={`${siteConfig.url}/og.png.png`} />
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
