@@ -1,0 +1,33 @@
+---
+import { siteConfig } from '../data/siteConfig';
+
+let commitHash = '';
+let commitUrl = '';
+
+try {
+  const response = await fetch(`https://api.github.com/repos/${siteConfig.github.repo}/commits/${siteConfig.github.branch}`);
+  const data = await response.json();
+
+  if (data.sha) {
+    commitHash = data.sha.substring(0, 7);
+    commitUrl = data.html_url;
+  }
+} catch (error) {
+  console.error('Failed to fetch commit hash:', error);
+}
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; {currentYear} {siteConfig.name}</p>
+    {commitHash && (
+      <div class="version-badge">
+        <a href={commitUrl} class="version-link" target="_blank" rel="noopener">
+          <span class="version-label">Version:</span> <span id="commit-hash">{commitHash}</span>
+        </a>
+      </div>
+    )}
+  </div>
+</footer>

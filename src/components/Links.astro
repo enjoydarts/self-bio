@@ -1,0 +1,25 @@
+---
+import { socialLinks } from '../data/links';
+---
+
+<section class="section">
+  <h2 class="section-title">Links</h2>
+  <div class="verified-accounts">
+    {socialLinks.map((link) => (
+      <a
+        href={link.url}
+        class="account-link"
+        target={link.url.startsWith('mailto:') ? undefined : '_blank'}
+        rel={link.rel ? `${link.rel} noopener` : 'noopener'}
+      >
+        <svg class="account-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d={link.icon} />
+        </svg>
+        <div class="account-info">
+          <span class="account-name">{link.name}</span>
+          <span class="account-url">{link.displayUrl}</span>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

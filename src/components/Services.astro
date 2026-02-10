@@ -1,0 +1,23 @@
+---
+import { services } from '../data/services';
+---
+
+<section class="section">
+  <h2 class="section-title">Services</h2>
+  <div class="services-list">
+    {services.map((category) => (
+      <div class="service-category">
+        <h3 class="service-category-title">
+          {category.title.en} / {category.title.ja}
+        </h3>
+        <ul class="service-items">
+          {category.items.map((item) => (
+            <li>
+              {item.en}<br /><span class="service-ja">{item.ja}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

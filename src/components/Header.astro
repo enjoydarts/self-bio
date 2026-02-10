@@ -1,0 +1,22 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<header class="site-header">
+  <img
+    src={siteConfig.avatar}
+    alt={siteConfig.name}
+    class="avatar"
+  />
+  <div class="header-info">
+    <h1>{siteConfig.name}</h1>
+    <p class="subtitle">{siteConfig.subtitle}</p>
+    <p class="location">{siteConfig.location}</p>
+  </div>
+  {siteConfig.status.available && (
+    <div class="status-badge">
+      <span class="status-indicator"></span>
+      <span class="status-text">{siteConfig.status.text}</span>
+    </div>
+  )}
+</header>

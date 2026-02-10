@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Bio from '../components/Bio.astro';
+import Links from '../components/Links.astro';
+import Share from '../components/Share.astro';
+import Services from '../components/Services.astro';
+import TechStack from '../components/TechStack.astro';
+import BlogPosts from '../components/BlogPosts.astro';
+import XTimeline from '../components/XTimeline.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <div class="container">
+    <Header />
+
+    <div class="main-layout">
+      <!-- Left Column -->
+      <div class="left-column">
+        <Bio />
+        <Links />
+        <Share />
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <Services />
+        <TechStack />
+        <BlogPosts />
+        <XTimeline />
+      </div>
+    </div>
+
+    <Footer />
+  </div>
+</Layout>
