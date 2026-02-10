@@ -2,18 +2,18 @@
 import { services } from '../data/services';
 ---
 
-<section class="section">
-  <h2 class="section-title">Services</h2>
-  <div class="services-list">
+<section class="mb-[50px]">
+  <h2 class="text-lg font-semibold text-white mb-5">Services</h2>
+  <div class="flex flex-col gap-7">
     {services.map((category) => (
-      <div class="service-category">
-        <h3 class="service-category-title">
+      <div>
+        <h3 class="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-[0.5px]">
           {category.title.en} / {category.title.ja}
         </h3>
-        <ul class="service-items">
+        <ul class="service-items list-none flex flex-col gap-[10px]">
           {category.items.map((item) => (
-            <li>
-              {item.en}<br /><span class="service-ja">{item.ja}</span>
+            <li class="text-sm text-gray-700 pl-4 relative leading-[1.5]">
+              {item.en}<br /><span class="text-[13px] text-gray-600 inline-block mt-[2px]">{item.ja}</span>
             </li>
           ))}
         </ul>

@@ -12,19 +12,19 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
-  <div class="container">
+  <div class="max-w-[1200px] mx-auto px-6 pt-[60px] pb-[100px] max-tablet:px-5 max-tablet:pt-10 max-tablet:pb-20 max-mobile:px-4 max-mobile:pt-[30px] max-mobile:pb-[60px]">
     <Header />
 
-    <div class="main-layout">
+    <div class="grid grid-cols-[400px_1fr] gap-[60px] items-start max-tablet:grid-cols-1 max-tablet:gap-[50px]">
       <!-- Left Column -->
-      <div class="left-column">
+      <div class="sticky top-10 max-tablet:static">
         <Bio />
         <Links />
         <Share />
       </div>
 
       <!-- Right Column -->
-      <div class="right-column">
+      <div class="min-w-0">
         <Services />
         <TechStack />
         <BlogPosts />
