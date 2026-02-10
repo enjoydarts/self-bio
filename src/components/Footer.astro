@@ -1,11 +1,13 @@
 ---
-import { siteConfig } from '../data/siteConfig';
+import { getEntry } from 'astro:content';
+
+const profile = await getEntry('profile', 'main');
 
 let commitHash = '';
 let commitUrl = '';
 
 try {
-  const response = await fetch(`https://api.github.com/repos/${siteConfig.github.repo}/commits/${siteConfig.github.branch}`);
+  const response = await fetch(`https://api.github.com/repos/${profile.data.github.repo}/commits/${profile.data.github.branch}`);
   const data = await response.json();
 
   if (data.sha) {
@@ -21,7 +23,7 @@ const currentYear = new Date().getFullYear();
 
 <footer class="mt-20 pt-10 border-t border-gray-300 text-gray-500 text-[13px]">
   <div class="flex justify-between items-center max-mobile:flex-col max-mobile:gap-3">
-    <p>&copy; {currentYear} {siteConfig.name}</p>
+    <p>&copy; {currentYear} {profile.data.name}</p>
     {commitHash && (
       <div class="opacity-50 transition-opacity duration-200 hover:opacity-100">
         <a href={commitUrl} class="text-gray-500 no-underline text-[11px] transition-colors duration-200 hover:text-cyan" target="_blank" rel="noopener">

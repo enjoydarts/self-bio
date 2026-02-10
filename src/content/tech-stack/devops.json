@@ -1,0 +1,71 @@
+{
+  "title": "DevOps & Tools",
+  "items": [
+    {
+      "name": "git",
+      "displayName": "Git",
+      "icon": {
+        "type": "simpleicons",
+        "value": "git",
+        "color": "F05032"
+      },
+      "title": "Git"
+    },
+    {
+      "name": "githubactions",
+      "displayName": "GitHub Actions",
+      "icon": {
+        "type": "simpleicons",
+        "value": "githubactions",
+        "color": "2088FF"
+      },
+      "title": "GitHub Actions"
+    },
+    {
+      "name": "circleci",
+      "displayName": "CircleCI",
+      "icon": {
+        "type": "simpleicons",
+        "value": "circleci",
+        "color": "343434"
+      },
+      "title": "CircleCI"
+    },
+    {
+      "name": "sentry",
+      "displayName": "Sentry",
+      "icon": {
+        "type": "simpleicons",
+        "value": "sentry",
+        "color": "362D59"
+      },
+      "title": "Sentry"
+    },
+    {
+      "name": "cloudwatch",
+      "displayName": "CloudWatch",
+      "icon": {
+        "type": "skillicons",
+        "value": "aws"
+      },
+      "title": "CloudWatch"
+    },
+    {
+      "name": "rspec",
+      "displayName": "RSpec",
+      "icon": {
+        "type": "simpleicons",
+        "value": "ruby",
+        "color": "CC342D"
+      },
+      "title": "RSpec"
+    },
+    {
+      "name": "more",
+      "displayName": "more",
+      "icon": {
+        "type": "more"
+      }
+    }
+  ]
+}

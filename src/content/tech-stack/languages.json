@@ -1,0 +1,52 @@
+{
+  "title": "Languages",
+  "items": [
+    {
+      "name": "ruby",
+      "displayName": "Ruby",
+      "icon": {
+        "type": "simpleicons",
+        "value": "ruby",
+        "color": "CC342D"
+      },
+      "title": "Ruby"
+    },
+    {
+      "name": "php",
+      "displayName": "PHP",
+      "icon": {
+        "type": "simpleicons",
+        "value": "php",
+        "color": "777BB4"
+      },
+      "title": "PHP"
+    },
+    {
+      "name": "typescript",
+      "displayName": "TypeScript",
+      "icon": {
+        "type": "simpleicons",
+        "value": "typescript",
+        "color": "3178C6"
+      },
+      "title": "TypeScript"
+    },
+    {
+      "name": "kotlin",
+      "displayName": "Kotlin",
+      "icon": {
+        "type": "simpleicons",
+        "value": "kotlin",
+        "color": "7F52FF"
+      },
+      "title": "Kotlin"
+    },
+    {
+      "name": "more",
+      "displayName": "more",
+      "icon": {
+        "type": "more"
+      }
+    }
+  ]
+}

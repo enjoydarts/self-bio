@@ -1,0 +1,72 @@
+{
+  "title": "Frameworks",
+  "items": [
+    {
+      "name": "rails",
+      "displayName": "Rails",
+      "icon": {
+        "type": "simpleicons",
+        "value": "rubyonrails",
+        "color": "D30001"
+      },
+      "title": "Ruby on Rails"
+    },
+    {
+      "name": "laravel",
+      "displayName": "Laravel",
+      "icon": {
+        "type": "simpleicons",
+        "value": "laravel",
+        "color": "FF2D20"
+      },
+      "title": "Laravel"
+    },
+    {
+      "name": "react",
+      "displayName": "React",
+      "icon": {
+        "type": "simpleicons",
+        "value": "react",
+        "color": "61DAFB"
+      },
+      "title": "React"
+    },
+    {
+      "name": "vue",
+      "displayName": "Vue",
+      "icon": {
+        "type": "simpleicons",
+        "value": "vuedotjs",
+        "color": "4FC08D"
+      },
+      "title": "Vue.js"
+    },
+    {
+      "name": "nextjs",
+      "displayName": "Next.js",
+      "icon": {
+        "type": "simpleicons",
+        "value": "nextdotjs",
+        "color": "000000"
+      },
+      "title": "Next.js"
+    },
+    {
+      "name": "tailwind",
+      "displayName": "Tailwind",
+      "icon": {
+        "type": "simpleicons",
+        "value": "tailwindcss",
+        "color": "06B6D4"
+      },
+      "title": "Tailwind CSS"
+    },
+    {
+      "name": "more",
+      "displayName": "more",
+      "icon": {
+        "type": "more"
+      }
+    }
+  ]
+}

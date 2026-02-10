@@ -1,0 +1,42 @@
+{
+  "title": "Database & Cache",
+  "items": [
+    {
+      "name": "mysql",
+      "displayName": "MySQL",
+      "icon": {
+        "type": "simpleicons",
+        "value": "mysql",
+        "color": "4479A1"
+      },
+      "title": "MySQL"
+    },
+    {
+      "name": "postgresql",
+      "displayName": "PostgreSQL",
+      "icon": {
+        "type": "simpleicons",
+        "value": "postgresql",
+        "color": "4169E1"
+      },
+      "title": "PostgreSQL"
+    },
+    {
+      "name": "redis",
+      "displayName": "Redis",
+      "icon": {
+        "type": "simpleicons",
+        "value": "redis",
+        "color": "DC382D"
+      },
+      "title": "Redis"
+    },
+    {
+      "name": "more",
+      "displayName": "more",
+      "icon": {
+        "type": "more"
+      }
+    }
+  ]
+}

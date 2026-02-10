@@ -1,0 +1,60 @@
+{
+  "title": "Infrastructure & Cloud",
+  "items": [
+    {
+      "name": "aws",
+      "displayName": "AWS",
+      "icon": {
+        "type": "skillicons",
+        "value": "aws"
+      },
+      "title": "AWS"
+    },
+    {
+      "name": "oci",
+      "displayName": "Oracle Cloud",
+      "icon": {
+        "type": "text",
+        "value": "OCI"
+      },
+      "title": "Oracle Cloud"
+    },
+    {
+      "name": "docker",
+      "displayName": "Docker",
+      "icon": {
+        "type": "simpleicons",
+        "value": "docker",
+        "color": "2496ED"
+      },
+      "title": "Docker"
+    },
+    {
+      "name": "nginx",
+      "displayName": "nginx",
+      "icon": {
+        "type": "simpleicons",
+        "value": "nginx",
+        "color": "009639"
+      },
+      "title": "Nginx"
+    },
+    {
+      "name": "caddy",
+      "displayName": "Caddy",
+      "icon": {
+        "type": "simpleicons",
+        "value": "caddy",
+        "color": "1F88C0"
+      },
+      "title": "Caddy"
+    },
+    {
+      "name": "more",
+      "displayName": "more",
+      "icon": {
+        "type": "more"
+      }
+    }
+  ]
+}

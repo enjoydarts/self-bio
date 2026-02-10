@@ -1,5 +1,11 @@
 ---
-import { socialLinks } from '../data/links';
+import { getCollection } from 'astro:content';
+
+const allLinks = await getCollection('links');
+const sortOrder = ['blog', 'github', 'x', 'threads', 'email'];
+const socialLinks = allLinks.sort((a, b) => {
+  return sortOrder.indexOf(a.id) - sortOrder.indexOf(b.id);
+});
 ---
 
 <section class="mb-[50px]">
@@ -7,17 +13,17 @@ import { socialLinks } from '../data/links';
   <div class="flex flex-col">
     {socialLinks.map((link) => (
       <a
-        href={link.url}
+        href={link.data.url}
         class="flex items-center py-4 no-underline text-gray-900 border-b border-gray-300 transition-all duration-200 hover:text-cyan group"
-        target={link.url.startsWith('mailto:') ? undefined : '_blank'}
-        rel={link.rel ? `${link.rel} noopener` : 'noopener'}
+        target={link.data.url.startsWith('mailto:') ? undefined : '_blank'}
+        rel={link.data.rel ? `${link.data.rel} noopener` : 'noopener'}
       >
         <svg class="w-5 h-5 mr-3 flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="currentColor">
-          <path d={link.icon} />
+          <path d={link.data.icon} />
         </svg>
         <div class="flex-1 flex flex-col">
-          <span class="text-sm font-medium mb-[2px]">{link.name}</span>
-          <span class="text-[13px] text-gray-500">{link.displayUrl}</span>
+          <span class="text-sm font-medium mb-[2px]">{link.data.name}</span>
+          <span class="text-[13px] text-gray-500">{link.data.displayUrl}</span>
         </div>
       </a>
     ))}

@@ -1,0 +1,24 @@
+{
+  "title": {
+    "en": "Infrastructure & DevOps",
+    "ja": "インフラ・DevOps"
+  },
+  "items": [
+    {
+      "en": "CI/CD Pipeline Setup",
+      "ja": "CI/CDパイプライン構築"
+    },
+    {
+      "en": "Cloud Infrastructure Design",
+      "ja": "クラウドインフラ設計"
+    },
+    {
+      "en": "Server Configuration & Management",
+      "ja": "サーバー構成・管理"
+    },
+    {
+      "en": "Monitoring & Alert Setup",
+      "ja": "モニタリング・アラート設定"
+    }
+  ]
+}

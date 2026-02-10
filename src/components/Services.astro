@@ -1,5 +1,11 @@
 ---
-import { services } from '../data/services';
+import { getCollection } from 'astro:content';
+
+const allServices = await getCollection('services');
+const sortOrder = ['web-development', 'testing', 'consulting', 'infrastructure'];
+const services = allServices.sort((a, b) => {
+  return sortOrder.indexOf(a.id) - sortOrder.indexOf(b.id);
+});
 ---
 
 <section class="mb-[50px]">
@@ -8,10 +14,10 @@ import { services } from '../data/services';
     {services.map((category) => (
       <div>
         <h3 class="text-sm font-semibold text-gray-600 mb-3 uppercase tracking-[0.5px]">
-          {category.title.en} / {category.title.ja}
+          {category.data.title.en} / {category.data.title.ja}
         </h3>
         <ul class="service-items list-none flex flex-col gap-[10px]">
-          {category.items.map((item) => (
+          {category.data.items.map((item) => (
             <li class="text-sm text-gray-700 pl-4 relative leading-[1.5]">
               {item.en}<br /><span class="text-[13px] text-gray-600 inline-block mt-[2px]">{item.ja}</span>
             </li>

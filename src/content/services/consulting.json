@@ -1,0 +1,52 @@
+{
+  "title": {
+    "en": "Consulting & Support",
+    "ja": "コンサルティング・サポート"
+  },
+  "items": [
+    {
+      "en": "Technology Selection & Architecture Design",
+      "ja": "技術選定・アーキテクチャ設計"
+    },
+    {
+      "en": "Code Review",
+      "ja": "コードレビュー"
+    },
+    {
+      "en": "Performance Optimization",
+      "ja": "パフォーマンス最適化"
+    },
+    {
+      "en": "Technical Debt Resolution",
+      "ja": "技術的負債の解消"
+    },
+    {
+      "en": "Project Recovery & Rescue",
+      "ja": "既存プロジェクトのリカバリー・救済"
+    },
+    {
+      "en": "Agile Development Adoption",
+      "ja": "アジャイル開発導入支援"
+    },
+    {
+      "en": "Technical Advisor",
+      "ja": "技術顧問"
+    },
+    {
+      "en": "Scrum Master",
+      "ja": "スクラムマスター"
+    },
+    {
+      "en": "Engineer Training & Development",
+      "ja": "エンジニア育成"
+    },
+    {
+      "en": "Technical Mentoring",
+      "ja": "技術メンタリング"
+    },
+    {
+      "en": "Team Development Support",
+      "ja": "チーム開発サポート"
+    }
+  ]
+}

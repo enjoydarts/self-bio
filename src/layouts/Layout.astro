@@ -1,5 +1,5 @@
 ---
-import { siteConfig } from '../data/siteConfig';
+import { getEntry } from 'astro:content';
 import '../styles/global.css';
 
 interface Props {
@@ -7,21 +7,23 @@ interface Props {
   description?: string;
 }
 
-const { title = siteConfig.title, description = siteConfig.description } = Astro.props;
+const profile = await getEntry('profile', 'main');
+
+const { title = profile.data.title, description = profile.data.description } = Astro.props;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Person",
-      "@id": `${siteConfig.url}/#person`,
-      "name": siteConfig.name,
-      "jobTitle": siteConfig.subtitle,
-      "description": siteConfig.description,
-      "url": siteConfig.url,
+      "@id": `${profile.data.url}/#person`,
+      "name": profile.data.name,
+      "jobTitle": profile.data.subtitle,
+      "description": profile.data.description,
+      "url": profile.data.url,
       "image": {
         "@type": "ImageObject",
-        "url": `${siteConfig.url}/images/avatar.png`,
+        "url": `${profile.data.url}/images/avatar.png`,
         "width": 400,
         "height": 400
       },
@@ -55,12 +57,12 @@ const structuredData = {
     },
     {
       "@type": "WebSite",
-      "@id": `${siteConfig.url}/#website`,
-      "url": siteConfig.url,
-      "name": siteConfig.title,
-      "description": siteConfig.description,
+      "@id": `${profile.data.url}/#website`,
+      "url": profile.data.url,
+      "name": profile.data.title,
+      "description": profile.data.description,
       "author": {
-        "@id": `${siteConfig.url}/#person`
+        "@id": `${profile.data.url}/#person`
       },
       "inLanguage": "ja-JP"
     }
@@ -80,7 +82,7 @@ const structuredData = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={`${siteConfig.url}/og.png.png`} />
+    <meta property="og:image" content={`${profile.data.url}/og.png.png`} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -88,7 +90,7 @@ const structuredData = {
     <meta name="twitter:creator" content="@enjoydarts" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`${siteConfig.url}/og.png.png`} />
+    <meta name="twitter:image" content={`${profile.data.url}/og.png.png`} />
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />

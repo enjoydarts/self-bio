@@ -1,0 +1,52 @@
+{
+  "title": {
+    "en": "Web Development",
+    "ja": "Web開発"
+  },
+  "items": [
+    {
+      "en": "Full-stack Web Application Development",
+      "ja": "Webアプリケーション開発（フルスタック）"
+    },
+    {
+      "en": "Prototyping & MVP Development",
+      "ja": "プロトタイピング・MVP開発"
+    },
+    {
+      "en": "SaaS Development",
+      "ja": "SaaS開発"
+    },
+    {
+      "en": "E-commerce Development",
+      "ja": "ECサイト開発"
+    },
+    {
+      "en": "API Design & Development",
+      "ja": "API設計・開発"
+    },
+    {
+      "en": "API Integration",
+      "ja": "API統合"
+    },
+    {
+      "en": "Frontend Development",
+      "ja": "フロントエンド開発"
+    },
+    {
+      "en": "Backend Development",
+      "ja": "バックエンド開発"
+    },
+    {
+      "en": "Database Design & Optimization",
+      "ja": "データベース設計・最適化"
+    },
+    {
+      "en": "Data Migration",
+      "ja": "データマイグレーション"
+    },
+    {
+      "en": "Legacy System Improvement & Refactoring",
+      "ja": "レガシーシステム改善・リファクタリング"
+    }
+  ]
+}

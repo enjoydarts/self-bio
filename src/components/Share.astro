@@ -1,5 +1,7 @@
 ---
-import { siteConfig } from '../data/siteConfig';
+import { getEntry } from 'astro:content';
+
+const profile = await getEntry('profile', 'main');
 ---
 
 <section class="mb-[50px]">
@@ -37,7 +39,7 @@ import { siteConfig } from '../data/siteConfig';
   </div>
 </section>
 
-<script define:vars={{ url: siteConfig.url, title: siteConfig.title }}>
+<script define:vars={{ url: profile.data.url, title: profile.data.title }}>
   const shareButtons = document.querySelectorAll('button[data-platform]');
 
   shareButtons.forEach(button => {

@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "Testing & Quality Assurance",
+    "ja": "テスト・品質保証"
+  },
+  "items": [
+    {
+      "en": "Test Automation Setup",
+      "ja": "自動テスト導入・整備"
+    },
+    {
+      "en": "Test Strategy Planning",
+      "ja": "テスト戦略立案"
+    },
+    {
+      "en": "E2E Testing Implementation",
+      "ja": "E2Eテスト構築"
+    },
+    {
+      "en": "Test Coverage Improvement",
+      "ja": "テストカバレッジ改善"
+    },
+    {
+      "en": "Quality Management Process",
+      "ja": "品質管理プロセス構築"
+    }
+  ]
+}

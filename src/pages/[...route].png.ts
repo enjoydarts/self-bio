@@ -1,13 +1,15 @@
 import { OGImageRoute } from 'astro-og-canvas';
-import { siteConfig } from '../data/siteConfig';
+import { getEntry } from 'astro:content';
+
+const profile = await getEntry('profile', 'main');
 
 export const { getStaticPaths, GET } = await OGImageRoute({
   param: 'route',
 
   pages: {
     'og': {
-      title: siteConfig.name,
-      description: `${siteConfig.subtitle}\nRuby, PHP, TypeScript\n\n● Available for Work`,
+      title: profile.data.name,
+      description: `${profile.data.subtitle}\nRuby, PHP, TypeScript\n\n● Available for Work`,
     },
   },
 

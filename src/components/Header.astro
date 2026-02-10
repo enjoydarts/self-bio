@@ -1,22 +1,25 @@
 ---
-import { siteConfig } from '../data/siteConfig';
+import { getEntry } from 'astro:content';
+
+const profile = await getEntry('profile', 'main');
+const { data } = profile;
 ---
 
 <header class="flex items-center gap-6 mb-[60px] pb-10 border-b border-gray-300 max-mobile:flex-col max-mobile:text-center max-mobile:gap-4 max-mobile:mb-10 max-mobile:pb-[30px]">
   <img
-    src={siteConfig.avatar}
-    alt={siteConfig.name}
+    src={data.avatar}
+    alt={data.name}
     class="w-20 h-20 rounded-full object-cover bg-white p-[3px] border-2 border-cyan/30 shadow-[0_8px_24px_rgba(0,212,255,0.2)] transition-all duration-200 flex-shrink-0 hover:scale-105 hover:shadow-[0_12px_32px_rgba(0,212,255,0.3)] max-mobile:w-24 max-mobile:h-24"
   />
   <div class="flex-1">
-    <h1 class="text-[28px] font-semibold text-white mb-[6px] max-mobile:text-2xl">{siteConfig.name}</h1>
-    <p class="text-[15px] text-gray-600 mb-1">{siteConfig.subtitle}</p>
-    <p class="text-sm text-gray-500">{siteConfig.location}</p>
+    <h1 class="text-[28px] font-semibold text-white mb-[6px] max-mobile:text-2xl">{data.name}</h1>
+    <p class="text-[15px] text-gray-600 mb-1">{data.subtitle}</p>
+    <p class="text-sm text-gray-500">{data.location}</p>
   </div>
-  {siteConfig.status.available && (
+  {data.status.available && (
     <div class="flex items-center gap-2 px-4 py-[10px] bg-status-green/10 border border-status-green/30 rounded-[20px] cursor-default max-mobile:mt-4">
       <span class="w-2 h-2 bg-status-green rounded-full animate-pulse-slow"></span>
-      <span class="text-[13px] font-medium text-status-green">{siteConfig.status.text}</span>
+      <span class="text-[13px] font-medium text-status-green">{data.status.text}</span>
     </div>
   )}
 </header>
