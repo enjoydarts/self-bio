@@ -1,43 +1,104 @@
-# Astro Starter Kit: Minimal
+# Self Bio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Astro + Tailwind CSS v4で構築した個人プロフィールページ
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 技術スタック
 
-## 🚀 Project Structure
+- **[Astro](https://astro.build/)** - 静的サイトジェネレーター
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - ユーティリティファーストCSSフレームワーク
+- **TypeScript** - 型安全なデータ管理
+- **Cloudflare Pages** - ホスティング・デプロイ
 
-Inside of your Astro project, you'll see the following folders and files:
+## 特徴
+
+- 🎨 純粋なTailwind CSSユーティリティ（CSS90%削減）
+- 📱 完全レスポンシブデザイン
+- 🧩 コンポーネントベースアーキテクチャ
+- 📊 TypeScriptデータファイルで簡単コンテンツ管理
+- 🚀 パフォーマンス最適化
+- 🔄 ブログフィード動的統合
+- 📦 CDNベースの技術スタックアイコン
+
+## ディレクトリ構成
 
 ```text
 /
-├── public/
+├── public/              # 静的アセット（画像、ファビコン）
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/      # Astroコンポーネント
+│   │   ├── ui/         # 再利用可能UIコンポーネント
+│   │   └── *.astro     # ページセクション
+│   ├── data/           # TypeScriptデータファイル
+│   │   ├── siteConfig.ts
+│   │   ├── services.ts
+│   │   ├── techStack.ts
+│   │   └── links.ts
+│   ├── layouts/        # ページレイアウト
+│   ├── pages/          # ルート
+│   └── styles/         # グローバルCSS
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 開発
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+依存関係のインストール:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm install
+```
 
-## 🧞 Commands
+ローカル開発サーバー起動:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+本番ビルド:
 
-## 👀 Want to learn more?
+```bash
+npm run build
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+本番ビルドプレビュー:
+
+```bash
+npm run preview
+```
+
+## デプロイ
+
+Cloudflare Pagesで以下の設定でデプロイ:
+
+- **ビルドコマンド**: `npm run build`
+- **ビルド出力ディレクトリ**: `/dist`
+- **Node.jsバージョン**: 20
+
+## カスタマイズ
+
+### サイト情報の更新
+
+`src/data/siteConfig.ts` を編集:
+
+```typescript
+export const siteConfig = {
+  name: 'あなたの名前',
+  title: 'あなたの肩書き',
+  // ... その他の設定
+}
+```
+
+### サービス一覧の更新
+
+`src/data/services.ts` を編集してサービス一覧を変更。
+
+### 技術スタックの更新
+
+`src/data/techStack.ts` を編集して技術スタックアイコンを変更。
+
+### リンクの更新
+
+`src/data/links.ts` を編集してソーシャルリンクを変更。
+
+## ライセンス
+
+© 2026 Minoru Kitayama
