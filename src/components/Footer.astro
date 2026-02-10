@@ -19,13 +19,13 @@ try {
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="footer">
-  <div class="footer-content">
+<footer class="mt-20 pt-10 border-t border-gray-300 text-gray-500 text-[13px]">
+  <div class="flex justify-between items-center max-mobile:flex-col max-mobile:gap-3">
     <p>&copy; {currentYear} {siteConfig.name}</p>
     {commitHash && (
-      <div class="version-badge">
-        <a href={commitUrl} class="version-link" target="_blank" rel="noopener">
-          <span class="version-label">Version:</span> <span id="commit-hash">{commitHash}</span>
+      <div class="opacity-50 transition-opacity duration-200 hover:opacity-100">
+        <a href={commitUrl} class="text-gray-500 no-underline text-[11px] transition-colors duration-200 hover:text-cyan" target="_blank" rel="noopener">
+          <span>Version:</span> <span class="font-mono">{commitHash}</span>
         </a>
       </div>
     )}

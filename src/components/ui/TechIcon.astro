@@ -16,22 +16,22 @@ if (item.icon.type === 'simpleicons' && item.icon.value) {
 ---
 
 {item.icon.type === 'more' ? (
-  <div class="tech-icon more" title={item.title}>
-    <div class="tech-icon-more-symbol">
+  <div class="flex flex-col items-center justify-center gap-[6px] p-[10px_8px] bg-gray-200 border border-gray-300 border-dashed rounded-lg transition-all duration-200 cursor-default w-20 flex-shrink-0 opacity-60 hover:opacity-100" title={item.title}>
+    <div class="w-7 h-7 flex items-center justify-center text-2xl font-light text-gray-600 flex-shrink-0">
       +
     </div>
-    <span class="tech-icon-label">{item.displayName}</span>
+    <span class="text-[11px] text-gray-600 font-medium text-center leading-[1.2] max-w-full break-words">{item.displayName}</span>
   </div>
 ) : item.icon.type === 'text' ? (
-  <div class="tech-icon" title={item.title}>
-    <div class="tech-icon-placeholder">
+  <div class="flex flex-col items-center justify-center gap-[6px] p-[10px_8px] bg-gray-200 border border-gray-300 rounded-lg transition-all duration-200 cursor-default w-20 flex-shrink-0 hover:bg-gray-300 hover:border-cyan hover:-translate-y-[2px] hover:shadow-[0_4px_12px_rgba(0,212,255,0.2)] group" title={item.title}>
+    <div class="w-7 h-7 flex items-center justify-center bg-gray-300 rounded-md text-[10px] font-bold text-gray-700 flex-shrink-0">
       {item.icon.value}
     </div>
-    <span class="tech-icon-label">{item.displayName}</span>
+    <span class="text-[11px] text-gray-600 font-medium text-center leading-[1.2] max-w-full break-words group-hover:text-cyan">{item.displayName}</span>
   </div>
 ) : (
-  <div class="tech-icon" title={item.title}>
-    <img src={iconUrl} alt={item.displayName} />
-    <span class="tech-icon-label">{item.displayName}</span>
+  <div class="flex flex-col items-center justify-center gap-[6px] p-[10px_8px] bg-gray-200 border border-gray-300 rounded-lg transition-all duration-200 cursor-default w-20 flex-shrink-0 hover:bg-gray-300 hover:border-cyan hover:-translate-y-[2px] hover:shadow-[0_4px_12px_rgba(0,212,255,0.2)] group" title={item.title}>
+    <img src={iconUrl} alt={item.displayName} class="w-7 h-7 object-contain flex-shrink-0" />
+    <span class="text-[11px] text-gray-600 font-medium text-center leading-[1.2] max-w-full break-words group-hover:text-cyan">{item.displayName}</span>
   </div>
 )}

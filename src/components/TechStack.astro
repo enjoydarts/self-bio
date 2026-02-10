@@ -3,13 +3,13 @@ import { techStack } from '../data/techStack';
 import TechIcon from './ui/TechIcon.astro';
 ---
 
-<section class="section">
-  <h2 class="section-title">Tech Stack</h2>
-  <div class="tech-stack">
+<section class="mb-[50px]">
+  <h2 class="text-lg font-semibold text-white mb-5">Tech Stack</h2>
+  <div class="flex flex-col gap-8">
     {techStack.map((category) => (
-      <div class="tech-category">
-        <h3 class="tech-category-title">{category.title}</h3>
-        <div class="tech-icons">
+      <div class="flex flex-col gap-4">
+        <h3 class="text-sm font-semibold text-gray-600 uppercase tracking-[0.5px]">{category.title}</h3>
+        <div class="flex flex-wrap gap-4">
           {category.items.map((item) => (
             <TechIcon item={item} />
           ))}
