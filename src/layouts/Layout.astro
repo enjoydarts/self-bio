@@ -8,6 +8,64 @@ interface Props {
 }
 
 const { title = siteConfig.title, description = siteConfig.description } = Astro.props;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${siteConfig.url}/#person`,
+      "name": siteConfig.name,
+      "jobTitle": siteConfig.subtitle,
+      "description": siteConfig.description,
+      "url": siteConfig.url,
+      "image": {
+        "@type": "ImageObject",
+        "url": `${siteConfig.url}/images/avatar.png`,
+        "width": 400,
+        "height": 400
+      },
+      "sameAs": [
+        "https://github.com/enjoydarts",
+        "https://x.com/enjoydarts",
+        "https://threads.net/darts",
+        "https://enjoydarts.blog"
+      ],
+      "knowsAbout": [
+        "Ruby",
+        "PHP",
+        "TypeScript",
+        "Web Development",
+        "Full Stack Development",
+        "Ruby on Rails",
+        "Laravel",
+        "React",
+        "Vue.js",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Freelance Web Engineer",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Japan"
+        }
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteConfig.url}/#website`,
+      "url": siteConfig.url,
+      "name": siteConfig.title,
+      "description": siteConfig.description,
+      "author": {
+        "@id": `${siteConfig.url}/#person`
+      },
+      "inLanguage": "ja-JP"
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -31,6 +89,9 @@ const { title = siteConfig.title, description = siteConfig.description } = Astro
 
     <!-- Twitter Widgets -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <slot />
