@@ -1,5 +1,7 @@
 ---
-import type { TechItem } from '../../data/techStack';
+import type { CollectionEntry } from 'astro:content';
+
+type TechItem = CollectionEntry<'tech-stack'>['data']['items'][number];
 
 interface Props {
   item: TechItem;

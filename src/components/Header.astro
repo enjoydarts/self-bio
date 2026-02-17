@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 
-const profile = await getEntry('profile', 'main');
+const profile = (await getEntry('profile', 'main'))!;
 const { data } = profile;
 ---
 

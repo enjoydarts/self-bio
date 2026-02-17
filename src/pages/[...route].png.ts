@@ -1,7 +1,7 @@
 import { OGImageRoute } from 'astro-og-canvas';
 import { getEntry } from 'astro:content';
 
-const profile = await getEntry('profile', 'main');
+const profile = (await getEntry('profile', 'main'))!;
 
 export const { getStaticPaths, GET } = await OGImageRoute({
   param: 'route',

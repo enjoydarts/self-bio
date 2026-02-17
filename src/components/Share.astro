@@ -1,7 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 
-const profile = await getEntry('profile', 'main');
+const profile = (await getEntry('profile', 'main'))!;
 ---
 
 <section class="mb-[50px]">
@@ -39,7 +39,7 @@ const profile = await getEntry('profile', 'main');
   </div>
 </section>
 
-<script define:vars={{ url: profile.data.url, title: profile.data.title }}>
+<script is:inline define:vars={{ url: profile.data.url, title: profile.data.title }}>
   const shareButtons = document.querySelectorAll('button[data-platform]');
 
   shareButtons.forEach(button => {
