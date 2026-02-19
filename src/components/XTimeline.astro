@@ -32,10 +32,49 @@
     function initTwitterWidget() {
       if (typeof window.twttr !== 'undefined' && window.twttr.widgets) {
         console.log('Twitter widgets loaded, initializing timeline');
-        try {
-          window.twttr.widgets.load(document.getElementById('timeline-container'));
-        } catch (e) {
-          console.error('Failed to load Twitter timeline:', e);
+        var container = document.getElementById('timeline-container');
+        console.log('Timeline container:', container);
+
+        if (container) {
+          try {
+            // 既存のタイムラインをクリア
+            var existingTimeline = container.querySelector('.twitter-timeline');
+            console.log('Existing timeline element:', existingTimeline);
+
+            // widgets.load()を呼び出す
+            var result = window.twttr.widgets.load(container);
+            console.log('widgets.load() result:', result);
+
+            // 代替案: 直接createTimelineを試す
+            setTimeout(function() {
+              var timeline = container.querySelector('iframe');
+              if (!timeline) {
+                console.warn('No iframe found, trying createTimeline');
+                window.twttr.widgets.createTimeline(
+                  {
+                    sourceType: 'profile',
+                    screenName: 'enjoydarts'
+                  },
+                  container,
+                  {
+                    height: 600,
+                    theme: 'dark',
+                    chrome: 'noheader nofooter noborders transparent'
+                  }
+                ).then(function(el) {
+                  console.log('Timeline created:', el);
+                }).catch(function(err) {
+                  console.error('Failed to create timeline:', err);
+                });
+              } else {
+                console.log('Timeline iframe found');
+              }
+            }, 1000);
+          } catch (e) {
+            console.error('Failed to load Twitter timeline:', e);
+          }
+        } else {
+          console.error('Timeline container not found');
         }
       } else {
         retryCount++;
