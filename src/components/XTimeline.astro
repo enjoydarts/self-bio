@@ -24,38 +24,74 @@
     function initTwitterWidget() {
       if (typeof window.twttr !== 'undefined' && window.twttr.widgets) {
         console.log('Twitter widgets API loaded');
+        console.log('twttr.widgets:', window.twttr.widgets);
+        console.log('createTimeline function:', window.twttr.widgets.createTimeline);
+
         var container = document.getElementById('timeline-container');
 
         if (container) {
           console.log('Creating timeline with createTimeline()');
+          console.log('Container element:', container);
 
           // ローディングメッセージをクリア
           container.innerHTML = '';
 
-          window.twttr.widgets.createTimeline(
-            {
-              sourceType: 'profile',
-              screenName: 'enjoydarts'
-            },
-            container,
-            {
-              height: 600,
-              theme: 'dark',
-              chrome: 'noheader nofooter noborders transparent'
+          var timeoutId;
+          var isResolved = false;
+
+          // タイムアウト処理（5秒待つ）
+          timeoutId = setTimeout(function() {
+            if (!isResolved) {
+              console.error('Timeline creation timed out after 5 seconds');
+              console.log('Checking network tab for blocked requests to syndication.twitter.com');
+              container.innerHTML = '<div class="text-gray-700 text-center py-10">Timeline loading timed out. This may be caused by:<br>1. Firefox Enhanced Tracking Protection<br>2. Ad blocker<br>3. Network issues<br><br>Check the Network tab in Developer Tools for blocked requests.</div>';
             }
-          ).then(function(el) {
-            console.log('Timeline created successfully:', el);
-            if (el) {
-              console.log('iframe src:', el.src);
-              console.log('iframe dimensions:', el.offsetWidth, 'x', el.offsetHeight);
+          }, 5000);
+
+          try {
+            var promise = window.twttr.widgets.createTimeline(
+              {
+                sourceType: 'profile',
+                screenName: 'enjoydarts'
+              },
+              container,
+              {
+                height: 600,
+                theme: 'dark',
+                chrome: 'noheader nofooter noborders transparent'
+              }
+            );
+
+            console.log('createTimeline returned:', promise);
+
+            if (promise && typeof promise.then === 'function') {
+              promise.then(function(el) {
+                isResolved = true;
+                clearTimeout(timeoutId);
+                console.log('Timeline created successfully:', el);
+                if (el) {
+                  console.log('iframe src:', el.src);
+                  console.log('iframe dimensions:', el.offsetWidth, 'x', el.offsetHeight);
+                } else {
+                  console.warn('Timeline element is null');
+                  container.innerHTML = '<div class="text-gray-700 text-center py-10">Timeline could not be loaded.</div>';
+                }
+              }).catch(function(err) {
+                isResolved = true;
+                clearTimeout(timeoutId);
+                console.error('Failed to create timeline:', err);
+                container.innerHTML = '<div class="text-gray-700 text-center py-10">Failed to load timeline: ' + err.message + '</div>';
+              });
             } else {
-              console.warn('Timeline element is null - check Firefox tracking protection');
-              container.innerHTML = '<div class="text-gray-700 text-center py-10">Timeline could not be loaded. Please check your browser\'s tracking protection settings.</div>';
+              console.error('createTimeline did not return a Promise:', promise);
+              clearTimeout(timeoutId);
             }
-          }).catch(function(err) {
-            console.error('Failed to create timeline:', err);
-            container.innerHTML = '<div class="text-gray-700 text-center py-10">Failed to load timeline: ' + err.message + '</div>';
-          });
+          } catch (e) {
+            isResolved = true;
+            clearTimeout(timeoutId);
+            console.error('Exception while calling createTimeline:', e);
+            container.innerHTML = '<div class="text-gray-700 text-center py-10">Error: ' + e.message + '</div>';
+          }
         } else {
           console.error('Timeline container not found');
         }
