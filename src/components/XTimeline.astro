@@ -25,20 +25,33 @@
 </section>
 
 <script is:inline>
-  // Twitter Widgetsの初期化を確実に行う
-  function initTwitterWidget() {
-    if (window.twttr && window.twttr.widgets) {
-      window.twttr.widgets.load(document.getElementById('timeline-container'));
-    } else {
-      // widgetsスクリプトが読み込まれていない場合は少し待って再試行
-      setTimeout(initTwitterWidget, 100);
-    }
-  }
+  (function() {
+    var retryCount = 0;
+    var maxRetries = 50; // 最大5秒待つ (100ms * 50)
 
-  // DOMContentLoaded後に初期化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTwitterWidget);
-  } else {
-    initTwitterWidget();
-  }
+    function initTwitterWidget() {
+      if (typeof window.twttr !== 'undefined' && window.twttr.widgets) {
+        console.log('Twitter widgets loaded, initializing timeline');
+        try {
+          window.twttr.widgets.load(document.getElementById('timeline-container'));
+        } catch (e) {
+          console.error('Failed to load Twitter timeline:', e);
+        }
+      } else {
+        retryCount++;
+        if (retryCount < maxRetries) {
+          setTimeout(initTwitterWidget, 100);
+        } else {
+          console.warn('Twitter widgets failed to load after ' + (maxRetries * 100) + 'ms');
+        }
+      }
+    }
+
+    // ページ読み込み後に初期化
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTwitterWidget);
+    } else {
+      initTwitterWidget();
+    }
+  })();
 </script>
