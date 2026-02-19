@@ -3,16 +3,8 @@
 
 <section class="mb-[50px]">
   <h2 class="text-lg font-semibold text-white mb-5">X Timeline</h2>
-  <div id="timeline-container" class="bg-gray-200 border border-gray-300 rounded-xl p-5 overflow-hidden max-tablet:hidden">
-    <a
-      class="twitter-timeline"
-      data-height="600"
-      data-theme="dark"
-      data-chrome="noheader nofooter noborders transparent"
-      href="https://twitter.com/enjoydarts?ref_src=twsrc%5Etfw"
-    >
-      Loading timeline...
-    </a>
+  <div id="timeline-container" class="bg-gray-200 border border-gray-300 rounded-xl p-5 overflow-hidden max-tablet:hidden min-h-[600px]">
+    <div class="text-gray-700 text-center py-10">Loading timeline...</div>
   </div>
   <div class="hidden max-tablet:block">
     <a href="https://twitter.com/enjoydarts" class="flex items-center justify-center gap-3 px-8 py-4 bg-gray-200 border border-gray-300 rounded-xl text-gray-700 no-underline text-base font-medium transition-all duration-200 hover:bg-gray-300 hover:border-cyan hover:text-cyan hover:-translate-y-[2px] hover:shadow-[0_4px_12px_rgba(0,212,255,0.2)]" target="_blank" rel="noopener">
@@ -31,48 +23,39 @@
 
     function initTwitterWidget() {
       if (typeof window.twttr !== 'undefined' && window.twttr.widgets) {
-        console.log('Twitter widgets loaded, initializing timeline');
+        console.log('Twitter widgets API loaded');
         var container = document.getElementById('timeline-container');
-        console.log('Timeline container:', container);
 
         if (container) {
-          try {
-            // 既存のタイムラインをクリア
-            var existingTimeline = container.querySelector('.twitter-timeline');
-            console.log('Existing timeline element:', existingTimeline);
+          console.log('Creating timeline with createTimeline()');
 
-            // widgets.load()を呼び出す
-            var result = window.twttr.widgets.load(container);
-            console.log('widgets.load() result:', result);
+          // ローディングメッセージをクリア
+          container.innerHTML = '';
 
-            // 代替案: 直接createTimelineを試す
-            setTimeout(function() {
-              var timeline = container.querySelector('iframe');
-              if (!timeline) {
-                console.warn('No iframe found, trying createTimeline');
-                window.twttr.widgets.createTimeline(
-                  {
-                    sourceType: 'profile',
-                    screenName: 'enjoydarts'
-                  },
-                  container,
-                  {
-                    height: 600,
-                    theme: 'dark',
-                    chrome: 'noheader nofooter noborders transparent'
-                  }
-                ).then(function(el) {
-                  console.log('Timeline created:', el);
-                }).catch(function(err) {
-                  console.error('Failed to create timeline:', err);
-                });
-              } else {
-                console.log('Timeline iframe found');
-              }
-            }, 1000);
-          } catch (e) {
-            console.error('Failed to load Twitter timeline:', e);
-          }
+          window.twttr.widgets.createTimeline(
+            {
+              sourceType: 'profile',
+              screenName: 'enjoydarts'
+            },
+            container,
+            {
+              height: 600,
+              theme: 'dark',
+              chrome: 'noheader nofooter noborders transparent'
+            }
+          ).then(function(el) {
+            console.log('Timeline created successfully:', el);
+            if (el) {
+              console.log('iframe src:', el.src);
+              console.log('iframe dimensions:', el.offsetWidth, 'x', el.offsetHeight);
+            } else {
+              console.warn('Timeline element is null - check Firefox tracking protection');
+              container.innerHTML = '<div class="text-gray-700 text-center py-10">Timeline could not be loaded. Please check your browser\'s tracking protection settings.</div>';
+            }
+          }).catch(function(err) {
+            console.error('Failed to create timeline:', err);
+            container.innerHTML = '<div class="text-gray-700 text-center py-10">Failed to load timeline: ' + err.message + '</div>';
+          });
         } else {
           console.error('Timeline container not found');
         }
@@ -82,6 +65,10 @@
           setTimeout(initTwitterWidget, 100);
         } else {
           console.warn('Twitter widgets failed to load after ' + (maxRetries * 100) + 'ms');
+          var container = document.getElementById('timeline-container');
+          if (container) {
+            container.innerHTML = '<div class="text-gray-700 text-center py-10">Twitter widgets script failed to load</div>';
+          }
         }
       }
     }
