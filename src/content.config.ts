@@ -1,15 +1,17 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 // Profile Collection
 const profileCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.json', base: './src/content/profile' }),
   schema: z.object({
     name: z.string(),
     title: z.string(),
     subtitle: z.string(),
     description: z.string(),
     location: z.string(),
-    url: z.string().url(),
+    url: z.url(),
     ogImage: z.string(),
     avatar: z.string(),
     status: z.object({
@@ -29,10 +31,10 @@ const profileCollection = defineCollection({
 
 // Links Collection
 const linksCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.json', base: './src/content/links' }),
   schema: z.object({
     name: z.string(),
-    url: z.string().url(),
+    url: z.url(),
     displayUrl: z.string(),
     icon: z.string(),
     rel: z.string().optional(),
@@ -41,7 +43,7 @@ const linksCollection = defineCollection({
 
 // Services Collection
 const servicesCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.json', base: './src/content/services' }),
   schema: z.object({
     title: z.object({
       en: z.string(),
@@ -58,7 +60,7 @@ const servicesCollection = defineCollection({
 
 // Tech Stack Collection
 const techStackCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '*.json', base: './src/content/tech-stack' }),
   schema: z.object({
     title: z.string(),
     items: z.array(
